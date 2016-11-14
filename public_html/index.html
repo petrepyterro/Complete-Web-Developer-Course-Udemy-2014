@@ -26,11 +26,20 @@
         background-color: #8404AE;
         width: 200px;
         height: 200px;
+        float: left;
       }
       .greenbox {
         background-color: #295715;
         width: 300px;
         height: 100px;
+        float: right;
+      }
+      .floatleft {
+        float: left;
+      }
+      
+      .clear {
+        clear: both;
       }
     </style>
   </head>
@@ -41,6 +50,7 @@
     <div class="greenbox">
       <p id="green" class="large">This is some more text.</p>
     </div>
-    <p>The third <span class="underline large bold">word</span> in this paragraph is underlined.</p>
+    <div class="clear"></div>
+    <p class="floatleft">The third <span class="underline large bold">word</span> in this paragraph is underlined.</p>
   </body>
 </html>
