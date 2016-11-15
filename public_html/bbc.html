@@ -170,10 +170,13 @@
       
       .newsitem a {
         color: #1F4F82;
+      }
+      
+      a {
         text-decoration: none;
       }
       
-      .newsitem a:hover{
+      a:hover{
         text-decoration: underline; 
       }
       
@@ -193,6 +196,67 @@
       
       .links {
         line-height: 1.5em;
+      }
+      
+      #watchlistitem {
+        background-color: #EEEEEE;
+        float: right;
+        width: 370px;
+        position: relative;
+        top: -80px;
+      }
+      
+      h2 {
+        color: #505050;
+        margin: 10px 0 10px 10px;
+        font-size: 1.8em;
+      }
+      
+      .boxes {
+        float: right;
+        margin: 20px 10px 0 0;
+      }
+      
+      .leftarrow {
+        float: left;
+        border: 1px solid white;
+      }
+      
+      .wlblock {
+        float: left;
+        background-color: #D1700E;
+        border: 1px solid white;
+        width: 157px;
+      }
+      
+      .wlblock a {
+        color: white;
+      }
+      
+      .wlblock p {
+        margin: 7px 10px;
+      }
+      
+      .rightarrow {
+        float: left;
+      }
+      
+      #watchlistitem ul {
+        list-style: none;
+        margin: 0 10px 10px 10px;
+        padding: 0;
+      }
+      
+      #watchlistitem li {
+        background-image: url('img/live.png');
+        background-repeat: no-repeat;
+        background-position: left center;
+        padding: 10px 0 10px 40px;
+        font-size: 1.6em;
+      }
+      
+      .bb {
+        border-bottom: 1px solid #C0D0D0;
       }
     </style>
   </head>
@@ -270,6 +334,30 @@
               <a class="video" href="#">How Saharan dust reached the UK. What will pollution do to us</a><br />
               <a class="sound" href="#">Air pollution 'a serious issue'</a>
             </p>
+          </div>
+          
+          <div id="watchlistitem">
+            <img src="img/boxes.png" alt="" class="boxes" /> 
+            <h2>Watch/Listen</h2> 
+           
+            <img src="img/leftarrow.png" alt="" class="leftarrow"/>
+            <div class="wlblock">
+              <img src="img/pict-1.png" alt="" />
+              <p><a href="">Hiker's footage of deadly eruption</a></p>
+            </div>
+            
+            <div class="wlblock">
+              <img src="img/pict-2.png" alt="" />
+              <p><a href="">Moment Lenin statue turn down</a></p>
+            </div>
+            
+            <img src="img/rightarrow.png" alt="" class="rightarrow"/>
+            <div class="break"></div>
+            <ul>
+              <li class="bb"><a href="#">BBC NEws Channel</a></li>
+              <li class="bb"><a href="#">Radio 5 Live</a></li>
+              <li><a href="#">Osborne questions on budget</a></li>
+            </ul>
           </div>
         </div>
       </div>   
