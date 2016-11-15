@@ -76,6 +76,70 @@
         background-repeat: no-repeat;
         background-position: right center;
       }
+      
+      #newsbar {
+        background-color: #990000;
+        width: 100%;
+        height: 40px;
+        color: white;
+        height: 80px;
+        padding-top: 19px;
+      }
+      
+      #newsbar p {
+        margin: 0;
+        padding: 0;
+        float: left;
+      }
+      
+      .break {
+        clear: both;
+      }
+      
+      #newsheader {
+        font-size: 3em;
+      }
+      
+      #uk {
+        font-size: 0.7em;
+        padding-left: 10px;
+      }
+      
+      #rss {
+        float: right;
+        margin-top: 30px;
+      }
+      
+      #rss img {
+        height: 16px;
+        position: relative;
+        top: 2px;
+      }
+      
+      #topicmenu ul {
+        background-color: #3E0C00;
+        list-style: none;
+        padding: 5px 0 0 5px;
+        margin: 0;
+        height: 20px;
+      }
+      
+      #topicmenu li {
+        font-size: 0.8em;
+        border-right: 1px solid #990000;
+        float: left;
+        background-color: transparent;
+        padding: 0 6px 0 6px;
+      }
+      
+      .selected {
+        background-color: #EDEDED!important;
+        color: #666666;
+        height: 20px;
+        position: relative;
+        top: -4px;
+        padding-top: 4px!important;
+      }
     </style>
   </head>
   <body>
@@ -104,6 +168,35 @@
           
           <div id="searchdiv">
             <input type="text" placeholder="Search"/>
+          </div>
+        </div>
+        
+        <div class="break"></div>
+        
+        <div id="newsbar">
+          <div class="fixedwidth">
+            <p id="newsheader">NEWS<span id="uk">UK</span></p>
+            <div id="rss">
+              RSS <img src="img/rss.png" alt="" />
+            </div>
+            <div class="break"></div>
+            <div id="topicmenu">
+              <ul>
+                <li>Home</li>
+                <li>England</li>
+                <li class="selected">UK</li>
+                <li>N Ireland</li>
+                <li>Scotland</li>
+                <li>Wales</li>
+                <li>Business</li>
+                <li>Politics</li>
+                <li>Health</li>
+                <li>Education</li>
+                <li>Sci/Environment</li>
+                <li>Technology</li>
+                <li style="border-right:none">Entertainment & Arts</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
