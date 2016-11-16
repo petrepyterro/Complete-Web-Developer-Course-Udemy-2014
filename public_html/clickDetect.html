@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Detect a click jQuery</title>
+  <style type="text/css">
+    .square {
+      background-color: red;
+      height: 200px;
+      width: 200px;
+      margin-top: 10px;
+    }
+    
+    .circle {
+      background-color: green;
+      height: 200px;
+      width: 200px;  
+      border-radius: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="circle"></div> 
+  <div class="square"></div>
+  <div class="square"></div>
+  
+  <script src="js/jquery-1.4.1.js"></script> 
+  <script type="text/javascript">
+    /*
+    $('.circle').click(function(){
+      console.log('circle clicked');
+    });
+    $('.square').click(function(){
+      console.log('square clicked');
+    });
+    */
+    $('div').click(function(){
+      console.log('div clicked');  
+    })
+  </script> 
+</body>
+</html>
