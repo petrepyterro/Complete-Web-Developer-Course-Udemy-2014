@@ -115,7 +115,7 @@
     </div>
     <div class="codeContainer" id="JSContainer">
       <div class="codeLabel">JS</div>
-      <textarea id="jsCode">Example Code</textarea>  
+      <textarea id="jsCode">alert("done")</textarea>  
     </div>
     <div class="codeContainer" id="ResultContainer">
       <div class="codeLabel">Result</div>
@@ -143,6 +143,7 @@
     });
     $('#runButton').click(function(){
       $("iframe").contents().find("html").html('<style>' + $('#cssCode').val() + '</style>' + $('#htmlCode').val());
+      eval($('#jsCode').val());
     })
   </script>
 </body>
