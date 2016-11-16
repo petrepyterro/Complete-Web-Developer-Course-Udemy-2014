@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Change style jQuery</title>
+  <style type="text/css">   
+  </style>
+</head>
+<body>
+  <p>Fade this text when click button bellow</p>
+  <button id="fader">Fade out</button>
+  <button id="faderIn">Fade In</button>
+  <script src="js/jquery-1.12.4.js"></script> 
+  <script type="text/javascript">
+    $('#fader').click(function(){
+      $('p').fadeOut("slow", function(){
+        alert("fadeOut complete!");
+      });
+    });
+    $('#faderIn').click(function(){
+      $('p').fadeIn();
+    })
+  </script> 
+</body>
+</html>
