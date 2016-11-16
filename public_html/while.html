@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>while Javascript</title>
+</head>
+<body>
+  <p id="arrayString"></p>
+  <script type="text/javascript">
+    var arrayString = '';
+    var myArray = ["pizza", "chocolate", "crisps"];
+    var i=0;
+    while(i<myArray.length){
+      arrayString += myArray[i] + ' ';
+      i++;
+    }
+    document.getElementById('arrayString').innerHTML = arrayString;
+  </script>   
+</body>
+</html>
