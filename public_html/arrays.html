@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript Arrays</title>
+</head>
+<body>
+  <button id="stylesCharger">Change the text!</button> 
+  <script type="text/javascript">
+    var myArray = new Array();
+    
+    myArray[0] = "pizza";
+    myArray[1] = "chocolate";
+    
+    myOtherArrays = ["rain", "sunshine"];
+    
+    myOtherArrays.push('snow');
+    
+    //remove two items from the index 1(second item, items are numbered from 0)
+    //myOtherArrays.splice(1, 2);
+    
+    //add hail and cloudy items after indexed 1 element, nothing is removed
+    myOtherArrays.splice(1, 0, "hail", "cloudy");
+    console.log(myOtherArrays);
+    
+    console.log(myOtherArrays.length);
+  </script> 
+</body>
+</html>
