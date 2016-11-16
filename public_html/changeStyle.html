@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Change style jQuery</title>
+  <style type="text/css">
+    .square {
+      background-color: red;
+      height: 300px;
+      width: 300px;
+      margin-top: 10px;
+    }
+    
+    .circle {
+      background-color: green;
+      height: 200px;
+      width: 200px;  
+      border-radius: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="circle"></div> 
+  <div class="square"></div>
+  <div class="square"></div>
+  
+  <script src="js/jquery-1.12.4.js"></script> 
+  <script type="text/javascript">
+    $("div").click(function(){
+      $(this).css({'height': '400px', 'width': '400px'});
+    });
+    $('.circle').click(function(){
+      $('.square').fadeOut();
+    })
+  </script> 
+</body>
+</html>
