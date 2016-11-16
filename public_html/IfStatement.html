@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>If Statement Javascript</title>
+</head>
+<body>
+  <p>What is the weather</p>
+  <input type="text" id="weather" />
+  <button id="myButton">Submit</button>
+  <script type="text/javascript">
+    document.getElementById('myButton').onclick = function(){
+      if(document.getElementById('weather').value == 'rain'){
+        console.log("It's raining");
+      } else {
+        console.log("It's not raining");
+      }
+    }
+    
+  </script>  
+</body>
+</html>
