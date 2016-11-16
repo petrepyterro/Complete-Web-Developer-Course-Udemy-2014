@@ -111,7 +111,7 @@
     </div>
     <div class="codeContainer" id="CSSContainer">
       <div class="codeLabel">CSS</div>
-      <textarea id="cssCode">Example Code</textarea>  
+      <textarea id="cssCode">html{background-color: blue;}</textarea>  
     </div>
     <div class="codeContainer" id="JSContainer">
       <div class="codeLabel">JS</div>
@@ -142,7 +142,7 @@
       $('.codeContainer').width(width+"%");
     });
     $('#runButton').click(function(){
-      $("iframe").contents().find("html").html($('#htmlCode').val());
+      $("iframe").contents().find("html").html('<style>' + $('#cssCode').val() + '</style>' + $('#htmlCode').val());
     })
   </script>
 </body>
