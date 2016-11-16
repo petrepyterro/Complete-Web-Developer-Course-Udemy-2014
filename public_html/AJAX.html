@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AJAX with jQuery</title>
+  <style type="text/css">
+    .circle {
+      background-color: green;
+      height: 200px;
+      width: 200px;  
+      border-radius: 100px;
+    }
+    .square {
+      background-color: green;
+      height: 300px;
+      width: 300px;  
+      margin-top: 100px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Asynchronous Javascript And XML</h1>
+  <script src="js/jquery-1.12.4.js"></script> 
+  <script type="text/javascript">
+    /*
+    $.get("testForAJAX.html", function(data){
+      
+    });
+    */
+    $.ajax({
+      url: "testForAJAX.html",
+    }).done(function(data){
+      $('h1').append(data);
+    });
+  </script> 
+</body>
+</html>
