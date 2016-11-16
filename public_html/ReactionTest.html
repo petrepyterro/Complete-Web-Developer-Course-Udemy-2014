@@ -8,6 +8,7 @@
       width: 200px;
       height: 200px;
       background-color: red;
+      position: relative;
     }
   </style>
 </head>
@@ -18,7 +19,8 @@
     var clickedTime;
     var createdTime;
     var reactionTime;
-    
+    var browserHeight = window.innerHeight;
+    var browserWidth = window.innerWidth;
     function getRandomColor(){
       var letters = '0123456789ABCDEF'.split('');
       var color = "#";
@@ -30,6 +32,8 @@
     
     function makeBox(){
       var randInterval = 5000*Math.random();
+      var randYPos = (browserHeight -200) * Math.random();
+      var randXPos = (browserWidth - 200) * Math.random();
       setTimeout(function(){
         if(Math.random()>0.5){
           document.getElementById("box").style.borderRadius = "100px"; 
@@ -37,6 +41,8 @@
           document.getElementById("box").style.borderRadius = "0";
         }
         document.getElementById("box").style.backgroundColor = getRandomColor();
+        document.getElementById("box").style.top = randYPos + 'px';
+        document.getElementById("box").style.left = randXPos + 'px';
         document.getElementById("box").style.display = 'block'; 
         createdTime = Date.now();
       }, randInterval);
