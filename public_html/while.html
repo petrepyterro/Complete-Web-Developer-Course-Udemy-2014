@@ -5,8 +5,12 @@
   <title>while Javascript</title>
 </head>
 <body>
-  <p id="arrayString"></p>
+  <!--<p id="arrayString"></p>-->
+  <p>How many fingers are you holding up? Raise between 0 and five fingers, please, otherwise this programm will fail dramatically</p>
+  <input type="text" id="myNumber" />
+  <button id="guess">Guess!</button>
   <script type="text/javascript">
+    /*
     var arrayString = '';
     var myArray = ["pizza", "chocolate", "crisps"];
     var i=0;
@@ -15,6 +19,29 @@
       i++;
     }
     document.getElementById('arrayString').innerHTML = arrayString;
+    */
+    document.getElementById('guess').onclick = function(){
+      var myNumber = new Number(document.getElementById('myNumber').value);
+      if (isNaN(new Number(myNumber))){
+        console.log("Provide me a number");
+        return;
+      } else if(document.getElementById('myNumber').value.length === 0){
+        console.log("Provide me a number");
+        return;
+      } else if (myNumber < 0){
+        console.log('I need a number between 0 and 5');
+        return;
+      } else if(myNumber > 5){
+        console.log('I need a number between 0 and 5');
+        return;
+      }
+      var guessed = 0;
+      while(myNumber != guessed){
+        console.log("I'm wrong, my number is " + guessed);  
+        guessed = Math.floor(6*Math.random());            
+      }
+      console.log("I got it, your number is " + document.getElementById('myNumber').value);
+    }
   </script>   
 </body>
 </html>
