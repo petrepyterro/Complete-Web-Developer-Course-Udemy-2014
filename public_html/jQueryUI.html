@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>jQuery UI</title>
-  
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" />
   <style type="text/css">
     #draggable {
       background-color: green;
@@ -17,7 +17,7 @@
   <script src="js/jquery-1.12.4.js" type="text/javascript"></script>  
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script type="text/javascript">
-    $('#draggable').draggable()
+    $('#draggable').resizable().draggable();
   </script>
 </body>
 </html>
