@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript variables</title>
+</head>
+<body>
+  <input type="text" id="myInput" value="test">
+  <button id="stylesCharger">Change the text</button>
+  <div id="firstDiv">This is some text</div> 
+  <script type="text/javascript">
+    var newText = document.getElementById("myInput").value;
+    
+    document.getElementById("stylesCharger").onclick = function(){
+      newText = document.getElementById("myInput").value;
+      document.getElementById('firstDiv').innerHTML = newText;
+    }
+  </script> 
+</body>
+</html>
