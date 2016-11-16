@@ -107,19 +107,19 @@
     <div class="clear"></div>
     <div class="codeContainer" id="HTMLContainer">
       <div class="codeLabel">HTML</div>
-      <textarea >Example Code</textarea>  
+      <textarea id="htmlCode">Example Code</textarea>  
     </div>
     <div class="codeContainer" id="CSSContainer">
       <div class="codeLabel">CSS</div>
-      <textarea >Example Code</textarea>  
+      <textarea id="cssCode">Example Code</textarea>  
     </div>
     <div class="codeContainer" id="JSContainer">
       <div class="codeLabel">JS</div>
-      <textarea >Example Code</textarea>  
+      <textarea id="jsCode">Example Code</textarea>  
     </div>
     <div class="codeContainer" id="ResultContainer">
       <div class="codeLabel">Result</div>
-      <iframe frameborder="0"></iframe>  
+      <iframe></iframe>  
     </div>
   </div>
   <script src="js/jquery-1.12.4.js" type="text/javascript"></script>  
@@ -140,6 +140,9 @@
       }).length;
       var width = 100/showingDivs;
       $('.codeContainer').width(width+"%");
+    });
+    $('#runButton').click(function(){
+      $("iframe").contents().find("html").html($('#htmlCode').val());
     })
   </script>
 </body>
