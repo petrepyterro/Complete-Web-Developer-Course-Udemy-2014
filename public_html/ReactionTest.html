@@ -4,16 +4,24 @@
   <meta charset="UTF-8">
   <title>Reaction Tester</title>
   <style type="text/css">
+    body {
+      font-family: Verdana, Geneva, sans-serif;
+    }
     #box {
       width: 200px;
       height: 200px;
       background-color: red;
       position: relative;
     }
+    .bold {
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
-  <p>Year time: <span id="time"></span></p> 
+  <h1>Test your reactions!</h1>
+  <p>Click on the boxes and circles as quicly as you can!</p>
+  <p class="bold">Year time: <span id="time">(not attempted yet)</span></p> 
   <div id="box"></div> 
   <script type="text/javascript">
     var clickedTime;
