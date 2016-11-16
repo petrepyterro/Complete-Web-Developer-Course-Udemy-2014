@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript Loops</title>
+</head>
+<body>
+  <p id="arrayString"></p> 
+  <script type="text/javascript">
+    var arrayString = '';
+    var myArray = ["pizza", "chocolate", "crisps"];
+    for(var i=0; i<myArray.length; i++){
+      arrayString += myArray[i] + ' ';
+    }
+    document.getElementById('arrayString').innerHTML = arrayString;
+  </script>  
+</body>
+</html>
