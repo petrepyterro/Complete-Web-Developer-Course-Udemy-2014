@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Disappearing Circles</title>
+  <style type="text/css">
+    div {
+      height: 200px;
+      width: 200px;
+      border-radius: 100px;
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div id="circle"></div> 
+  <script type="text/javascript">
+    document.getElementById('circle').onclick = function(){
+      document.getElementById('circle').style.display = 'none';
+    }    
+  </script> 
+</body>
+</html>
