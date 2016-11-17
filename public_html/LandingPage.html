@@ -40,6 +40,13 @@
       font-weight: bold;
     }
     
+    .marginTop {
+      margin-top: 30px;
+    }
+    .center {
+      text-align: center;
+    }
+    
   </style>
   <body>
     <div class="navbar navbar-default navbar-fixed-top">
@@ -71,30 +78,35 @@
         </div>
       </div>
     </div>
-    <div class="container" id="topContainer">
+    <div class="container contentContainer" id="topContainer">
       <div class="row">
         <div class="col-md-6 col-md-offset-3" id="topRow">
-          <h1>My Awesome App</h1>
+          <h1 class="marginTop">My Awesome App</h1>
           <p class="lead">This is why should download this fantastic app</p>
           <p>See more information about the app. You can go into a little more details if you want to</p>
-          <p class="bold">Interested? Join our mailing list!</p>
-          <form>
+          <p class="marginTop bold">Interested? Join our mailing list!</p>
+          <form class="marginTop">
             <div class="input-group">
               <span class="input-group-addon">@</span>
               <input type="email" class="form-control" placeholder="Your Email"/>
             </div>
-            <button type="submit" class="btn btn-success btn-lg">Submit</button>
+            <button type="submit" class="btn btn-success btn-lg marginTop">Submit</button>
               
           </form>
         </div>
       </div>    
+    </div>
+    <div class="container contentContainer">
+      <div class="row">
+        <h1 class="center">Why This App Is Awesome?</h1>
+      </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-1.12.4.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
-      $('#topContainer').css('height', $(window).height());
+      $('.contentContainer').css('height', $(window).height());
     </script>
   </body>
 </html>
