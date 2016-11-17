@@ -62,7 +62,10 @@
             </div>
             <button id="findMyWeather" class="btn btn-success btn-lg">Find My Weather</button>
           </form>
-          <div class="alert alert-success">Success!</div>
+          <div id="success" class="alert alert-success">Success!</div>
+          <div id="fail" class="alert alert-danger">Could not found weather data for that city. Please, try again!</div>
+          <div id="noCity" class="alert alert-danger">Please, enter a city!</div>
+          
         </div>
       </div>
     </div>
@@ -73,12 +76,18 @@
     <script type="text/javascript">
       $('#findMyWeather').click(function(event){
         event.preventDefault();
-          if ($('#city').val() != ""){
-            $.get('scraper.php?city=' + $('#city').val(), function(data){
-            $(".alert").html(data).fadeIn();
-          })  
+        $('.alert').hide();
+        if ($('#city').val() != ""){
+          $.get('scraper.php?city=' + $('#city').val(), function(data){
+
+            if(data == ""){
+              $('#fail').fadeIn();
+            } else {
+              $("#success").html(data).fadeIn();  
+            } 
+          });  
         } else {
-          alert('Please enter a city');
+          $('#noCity').fadeIn();
         }
         
       })  
