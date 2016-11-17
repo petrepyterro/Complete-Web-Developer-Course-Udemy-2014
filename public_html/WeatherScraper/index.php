@@ -54,7 +54,7 @@
             <div class="form-group">
               <input type="text" class="form-control" name="city" id="city" placeholder="Eg. London"/>
             </div>
-            <button class="btn btn-success btn-lg">Find My Weather</button>
+            <button id="findMyWeather" class="btn btn-success btn-lg">Find My Weather</button>
           </form>
         </div>
       </div>
@@ -63,5 +63,8 @@
     <script src="js/jquery-1.12.4.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      
+    </script>
   </body>
 </html>
