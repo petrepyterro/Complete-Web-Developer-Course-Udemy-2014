@@ -41,6 +41,12 @@
       
       button {
         margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      
+      .alert {
+        margin-top: 20px;
+        display: none;
       }
     </style>
   </head>
@@ -56,6 +62,7 @@
             </div>
             <button id="findMyWeather" class="btn btn-success btn-lg">Find My Weather</button>
           </form>
+          <div class="alert alert-success">Success!</div>
         </div>
       </div>
     </div>
@@ -68,7 +75,7 @@
         event.preventDefault();
           if ($('#city').val() != ""){
             $.get('scraper.php?city=' + $('#city').val(), function(data){
-            alert(data);
+            $(".alert").html(data).fadeIn();
           })  
         } else {
           alert('Please enter a city');
