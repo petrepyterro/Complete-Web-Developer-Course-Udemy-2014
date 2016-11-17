@@ -25,13 +25,38 @@
         height: 100%;
         background-size: cover;
         background-position: center;
+        padding-top: 150px;
+      }
+      .center {
+        text-align: center;
+      }
+      .white {
+        color: white;
+      }
+      
+      p {
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+      
+      button {
+        margin-top: 20px;
       }
     </style>
   </head>
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-md-6 col-md-offset-3">sf</div>
+        <div class="col-md-6 col-md-offset-3">
+          <h1 class="center white">Weather Predictor</h1>
+          <p class="lead center white">Your city below to get a forecast for the weather</p>
+          <form class="center" action="">
+            <div class="form-group">
+              <input type="text" class="form-control" name="city" id="city" placeholder="Eg. London"/>
+            </div>
+            <button class="btn btn-success btn-lg">Find My Weather</button>
+          </form>
+        </div>
       </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
