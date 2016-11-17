@@ -21,9 +21,23 @@
     .navbar-brand {
       font-size: 1.7em;
     }
+    #topContainer {
+      background-image: url('img/background.jpg');
+      width: 100%;
+      background-size: cover;
+    }
+    
+    #topRow {
+      margin-top: 100px;
+      text-align: center;
+    }
+    
+    #topRow h1 {
+      font-size: 300%;
+    }
   </style>
   <body>
-    <div class="navbar navbar-default">
+    <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -52,12 +66,19 @@
         </div>
       </div>
     </div>
-    <div class="container">
-      
+    <div class="container" id="topContainer">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3" id="topRow">
+          <h1>My Awesome App</h1>
+        </div>
+      </div>    
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-1.12.4.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $('#topContainer').css('height', $(window).height());
+    </script>
   </body>
 </html>
