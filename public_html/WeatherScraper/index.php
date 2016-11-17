@@ -64,7 +64,17 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
-      
+      $('#findMyWeather').click(function(event){
+        event.preventDefault();
+          if ($('#city').val() != ""){
+            $.get('scraper.php?city=' + $('#city').val(), function(data){
+            alert(data);
+          })  
+        } else {
+          alert('Please enter a city');
+        }
+        
+      })  
     </script>
   </body>
 </html>
