@@ -67,8 +67,7 @@
             <button id="findMyPostcode" class="btn btn-success btn-lg">Find Postcode</button>
           </form>
           <div id="success" class="alert alert-success">Success!</div>
-          <div id="fail" class="alert alert-danger">Could not found weather data for that city. Please, try again!</div>
-          <div id="noCity" class="alert alert-danger">Please, enter a city!</div>
+          <div id="fail" class="alert alert-danger">Could not find postcode data for that address. Please, try again!</div>
           
         </div>
       </div>
@@ -80,6 +79,27 @@
     <script type="text/javascript">
       $('#findMyPostcode').click(function(event){
         event.preventDefault();
+        $('.alert').hide();
+        var result = 0;
+        $.ajax({
+          type: "GET",
+          url: "https://maps.googleapis.com/maps/api/geocode/xml?address=" + encodeURIComponent($('#address').val()) + "&sensor=false&key=AIzaSyBC4m8B9bXjsYCcYvOMVlK30R8m1iPNtuA",
+          dataType: "xml",
+          success: processXML
+        });
+        
+        function processXML(xml){
+          $(xml).find("address_component").each(function(){
+            var pattern = /postal_code/;
+            if(pattern.test($(this).find("type").text())){
+              $('#success').html("The postcode you need is " + $(this).find("long_name").text()).fadeIn();
+              result = 1; 
+            }
+          });
+          if (result == 0){
+            $("#fail").fadeIn();
+          }
+        } 
         
       })  
     </script>
