@@ -62,13 +62,13 @@
           <p class="lead center">Enter any address to find the postcode</p>
           <form class="center" action="">
             <div class="form-group">
-              <input type="text" class="form-control" name="address" id="address"
+              <input type="text" class="form-control" name="address" id="address">
             </div>
             <button id="findMyPostcode" class="btn btn-success btn-lg">Find Postcode</button>
           </form>
           <div id="success" class="alert alert-success">Success!</div>
           <div id="fail" class="alert alert-danger">Could not find postcode data for that address. Please, try again!</div>
-          
+          <div id="failConnect" class="alert alert-danger">Could not connect to server</div>
         </div>
       </div>
     </div>
@@ -85,8 +85,13 @@
           type: "GET",
           url: "https://maps.googleapis.com/maps/api/geocode/xml?address=" + encodeURIComponent($('#address').val()) + "&sensor=false&key=AIzaSyBC4m8B9bXjsYCcYvOMVlK30R8m1iPNtuA",
           dataType: "xml",
-          success: processXML
+          success: processXML,
+          error: error
         });
+        
+        function error(){
+          $('#failConnect').fadeIn();  
+        }
         
         function processXML(xml){
           $(xml).find("address_component").each(function(){
