@@ -69,6 +69,10 @@
           <div id="success" class="alert alert-success">Success!</div>
           <div id="fail" class="alert alert-danger">Could not find postcode data for that address. Please, try again!</div>
           <div id="failConnect" class="alert alert-danger">Could not connect to server</div>
+          <div id="multipleResults" class="alert">
+            <p class="center">There are multiple alternatives. Click the links to see your postcode. Click close button to get ridd off of undesired choises</p>
+            <div class="panel-group" id="adressesAccordion"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -95,9 +99,12 @@
         
         function processXML(xml){
           if ($(xml).find('result').length > 1){
+            var postalCodeCount = 0;
             var pattern = /postal_code$|postal_code_(suffix|prefix)/;
+            var accordionHTML = '';
             $(xml).find('result').each(function(){
               var prefix = suffix = postalCode = ''; 
+              var accordionItemHTML = '';
               $(this).find('address_component').each(function(){
                 var match = $(this).find("type").text().match(pattern);
                 if (match && match[0] == 'postal_code'){
@@ -113,9 +120,27 @@
               }
               if (suffix !== ''){
                 postalCode += ' - (' + suffix + ' suffix)';
+              } 
+              
+              if (postalCode !== '' || prefix !== '' || suffix !== ''){
+                postalCodeCount++;
               }
-              console.log(postalCode);
-            });  
+              accordionItemHTML += '<div class="panel panel-default">';
+              accordionItemHTML += '<div class="panel-heading">';
+              accordionItemHTML += '<h4 class="panel-title">';
+              accordionItemHTML += '<a data-toggle="collapse" data-parent="#adressesAccordion" href=\"#collapse'
+                + postalCodeCount + '\">' + $(this).find('formatted_address').text() +"</a>";
+              accordionItemHTML += '</h4></div>';  
+              accordionItemHTML += '<div id=\"collapse' + postalCodeCount + '\" class="panel-collapse collapse">';
+              accordionItemHTML += '<div class="panel-body">';
+              accordionItemHTML += '<div>' + postalCode + '</div>';
+              accordionItemHTML += '</div></div></div>';
+              accordionHTML += accordionItemHTML;
+            });
+            if (postalCodeCount > 0){
+              $('#adressesAccordion').append(accordionHTML);
+              $('#multipleResults').fadeIn()
+            };
           } else {
             $(xml).find("address_component").each(function(){
               var pattern = /postal_code$|postal_code[^_](.*?)/;
