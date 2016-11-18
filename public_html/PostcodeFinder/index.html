@@ -94,19 +94,42 @@
         }
         
         function processXML(xml){
-          $(xml).find("address_component").each(function(){
-            var pattern = /postal_code/;
-            if(pattern.test($(this).find("type").text())){
-              $('#success').html("The postcode you need is " + $(this).find("long_name").text()).fadeIn();
-              result = 1; 
+          if ($(xml).find('result').length > 1){
+            var pattern = /postal_code$|postal_code_(suffix|prefix)/;
+            $(xml).find('result').each(function(){
+              var prefix = suffix = postalCode = ''; 
+              $(this).find('address_component').each(function(){
+                var match = $(this).find("type").text().match(pattern);
+                if (match && match[0] == 'postal_code'){
+                  postalCode = $(this).find("long_name").text();
+                } else if(match && match[0] == 'postal_code_prefix'){
+                  prefix = $(this).find("long_name").text(); 
+                } else if(match && match[0] == 'postal_code_suffix'){
+                  suffix = $(this).find("long_name").text(); 
+                }
+              });
+              if (prefix !== ''){
+                postalCode = '(prefix ' + prefix + ') - ' + postalCode;
+              }
+              if (suffix !== ''){
+                postalCode += ' - (' + suffix + ' suffix)';
+              }
+              console.log(postalCode);
+            });  
+          } else {
+            $(xml).find("address_component").each(function(){
+              var pattern = /postal_code$|postal_code[^_](.*?)/;
+              if(pattern.test($(this).find("type").text())){
+                $('#success').html("The postcode you need is " + $(this).find("long_name").text()).fadeIn();
+                result = 1; 
+              }
+            });
+            if (result == 0){
+              $("#fail").fadeIn();
             }
-          });
-          if (result == 0){
-            $("#fail").fadeIn();
-          }
-        } 
-        
-      })  
+          } 
+        };
+      });  
     </script>
   </body>
 </html>
